@@ -1,0 +1,6 @@
+scikit-learn
+tensorflow
+streamlit 
+pandas 
+numpy
+opencv-python
