@@ -69,23 +69,24 @@ if uploaded_image is not None:
     image = cv2.imdecode(file_bytes, 1)
     detected_image, num_faces,ans = detect_faces(image)
 
+    if num_faces is not None:
+        st.image(detected_image, caption=f"Detected {num_faces} faces", use_column_width=True)
 
-    st.image(detected_image, caption=f"Detected {num_faces} faces", use_column_width=True)
-
-    if ans=="Happy":
-        st.subheader(f"The Predicted Model is {ans} 😃")
-    elif ans=="Sad":
-        st.subheader(f"The Predicted Model is {ans} 😔")
-    elif ans=="Angry":
-        st.subheader(f"The Predicted Model is {ans} 😡")
-    elif ans=="Surprise":
-        st.subheader(f"The Predicted Model is {ans} 😮")
-    elif ans=="Fear":
-        st.subheader(f"The Predicted Model is {ans} 😨")
-    elif ans=="Disgust":
-        st.subheader(f"The Predicted Model is {ans} 🤢")
-    elif ans=="Neutral":
-        st.subheader(f"The Predicted Model is {ans} 😑")
-
+        if ans=="Happy":
+            st.subheader(f"The Predicted Model is {ans} 😃")
+        elif ans=="Sad":
+            st.subheader(f"The Predicted Model is {ans} 😔")
+        elif ans=="Angry":
+            st.subheader(f"The Predicted Model is {ans} 😡")
+        elif ans=="Surprise":
+            st.subheader(f"The Predicted Model is {ans} 😮")
+        elif ans=="Fear":
+            st.subheader(f"The Predicted Model is {ans} 😨")
+        elif ans=="Disgust":
+            st.subheader(f"The Predicted Model is {ans} 🤢")
+        elif ans=="Neutral":
+            st.subheader(f"The Predicted Model is {ans} 😑")
+    else:
+        st.subheader("Image Has No Human Face")
 
 
