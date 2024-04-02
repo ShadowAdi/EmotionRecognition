@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 from keras.preprocessing import image
 import cv2
-
+print(cv2.__version__)
 
 
 st.header("Emotion Detection")
